@@ -3,63 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarinho: do Campo à Cidade, Colhendo Oportunidades</title>
+    <title>Agrinho: O Quiz do Campo à Cidade</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="logo.png" alt="Logo do Aarinho">
-            <h1>Aarinho: do Campo à Cidade, Colhendo Oportunidades</h1>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Agrinho: O Quiz do Campo à Cidade</h1>
+            <img src="logo_agrinho.png" alt="Logo do Agrinho">
+        </header>
 
-    <main>
-        <section class="intro">
-            <div class="container">
-                <p>O Aarinho é um programa que...</p>
-                <a href="sobre.html" class="button">Saiba mais</a>
-            </div>
-        </section>
-
-        <section class="atividades">
-            <h2>Atividades</h2>
-            <div class="container">
-                <div class="atividade">
-                    <img src="imagem1.jpg" alt="Imagem da atividade 1">
-                    <h3>Nome da Atividade 1</h3>
-                    <p>Breve descrição da atividade 1.</p>
+        <main>
+            <div class="quiz-container">
+                <div class="pergunta">
+                    <p id="pergunta-texto"></p>
                 </div>
-                <div class="atividade">
-                    <img src="imagem2.jpg" alt="Imagem da atividade 2">
-                    <h3>Nome da Atividade 2</h3>
-                    <p>Breve descrição da atividade 2.</p>
+
+                <div class="alternativas">
+                    <!-- As alternativas serão adicionadas aqui -->
                 </div>
             </div>
-        </section>
 
-        <section class="historias">
-            <h2>Histórias de Sucesso</h2>
-            <div class="container">
-                <!-- Seção com histórias de sucesso -->
+            <div class="resultado" style="display: none;">
+                <h2>Seu resultado:</h2>
+                <p id="resultado-texto"></p>
+                <button id="reiniciar-quiz">Refazer Quiz</button>
             </div>
-        </section>
+        </main>
+    </div>
 
-        <section class="contato">
-            <h2>Entre em Contato</h2>
-            <div class="container">
-                <p>Tem alguma dúvida?</p>
-                <a href="#" class="button">Fale Conosco</a>
-            </div>
-        </section>
-    </main>
+    <script>
+        const perguntas = [
+            {
+                pergunta: "Imagine um futuro onde a tecnologia conecta o campo à cidade de formas inovadoras. Qual dessas tecnologias você acha que seria mais útil para o desenvolvimento rural?",
+                alternativas: [
+                    { texto: "Sensores inteligentes para monitorar plantações", isCorreto: true },
+                    { texto: "Realidade virtual para jogos agrícolas", isCorreto: false },
+                    { texto: "Drones para entregas rápidas de comida", isCorreto: false }
+                ]
+            },
+            {
+                pergunta: "O que você acha que é o maior desafio para a agricultura no futuro?",
+                alternativas: [
+                    { texto: "A falta de mão de obra especializada", isCorreto: true },
+                    { texto: "A falta de acesso à internet nas áreas rurais", isCorreto: false },
+                    { texto: "O aumento do preço dos fertilizantes", isCorreto: false }
+                ]
+            },
+            {
+                pergunta: "Com a crescente urbanização, como você acredita que a agricultura pode se adaptar?",
+                alternativas: [
+                    { texto: "Investindo em sistemas de produção vertical", isCorreto: true },
+                    { texto: "Migrando para outras áreas menos urbanizadas", isCorreto: false },
+                    { texto: "Diminuindo a produção de alimentos", isCorreto: false }
+                ]
+            },
+            {
+                pergunta: "Qual a importância de consumir produtos orgânicos e de produção local?",
+                alternativas: [
+                    { texto: "Promove a saúde do consumidor e o desenvolvimento da economia local", isCorreto: true },
+                    { texto: "Reduz o impacto ambiental, mas é mais caro", isCorreto: false },
+                    { texto: "É uma tendência moderna, mas não faz muita diferença", isCorreto: false }
+                ]
+            },
+            {
+                pergunta: "Com a crescente demanda por alimentos saudáveis, como você acha que a produção agrícola pode se transformar?",
+                alternativas: [
+                    { texto: "Priorizando a qualidade e a sustentabilidade", isCorreto: true },
+                    { texto: "Aumentando a produção em larga escala", isCorreto: false },
+                    { texto: "Utilizando mais agrotóxicos para aumentar a produtividade", isCorreto: false }
+                ]
+            }
+        ];
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Aarinho</p>
-        </div>
-    </footer>
+        const perguntaTexto = document.getElementById("pergunta-texto");
+        const alternativasContainer = document.querySelector(".alternativas");
+        const resultadoTexto = document.getElementById("resultado-texto");
+        const reiniciarQuiz = document.getElementById("reiniciar-quiz");
 
-    <script src="script.js"></script>
+        let perguntaAtual = 0;
+        let pontuacao = 0;
+
+        function mostrarPergunta() {
+            if (perguntaAtual < perguntas.length) {
+                const pergunta = perguntas[perguntaAtual];
+                perguntaTexto.textContent = pergunta.pergunta;
+                alternativasContainer.innerHTML = "";
+
+                pergunta.alternativas.forEach(alternativa => {
+                    const botaoAlternativa = document.createElement("button");
+                    botaoAlternativa.textContent = alternativa.texto;
+                    botaoAlternativa.addEventListener("click", () => verificarResposta(alternativa));
+                    alternativasContainer.appendChild(botaoAlternativa);
+                });
+
+                perguntaAtual++;
+            } else {
+                mostrarResultado();
+            }
+        }
+
+        function verificarResposta(alternativa) {
+            if (alternativa.isCorreto) {
+                pontuacao++;
+            }
+
+            mostrarPergunta();
+        }
+
+        function mostrarResultado() {
+            const quizContainer = document.querySelector(".quiz-container");
+            const resultadoContainer = document.querySelector(".resultado");
+
+            quizContainer.style.display = "none";
+            resultadoContainer.style.display = "block";
+
+            resultadoTexto.textContent = `Você acertou ${pontuacao} de ${perguntas.length} perguntas!`;
+        }
+
+        function reiniciar() {
+            perguntaAtual = 0;
+            pontuacao = 0;
+
+            const quizContainer = document.querySelector(".quiz-container");
+            const resultadoContainer = document.querySelector(".resultado");
+
+            quizContainer.style.display = "block";
+            resultadoContainer.style.display = "none";
+
+            mostrarPergunta();
+        }
+
+        reiniciarQuiz.addEventListener("click", reiniciar);
+
+        mostrarPergunta();
+    </script>
 </body>
 </html>
