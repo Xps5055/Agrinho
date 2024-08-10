@@ -1,51 +1,84 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho: do campo à cidade, colhendo oportunidades</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agrinho: Conscientização Ambiental</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://raw.githubusercontent.com/xps5055/agrinho/master/assets/icon.png">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="sobre">
-            <h1>Agrinho: do campo à cidade, colhendo oportunidades</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
-            <img src="imagem1.jpg" alt="Imagem de uma plantação">
-        </section>
-        <section id="servicos">
-            <h2>Serviços</h2>
-            <ul>
-                <li>Consultoria agrícola</li>
-                <li>Desenvolvimento de projetos agrícolas</li>
-                <li>Assessoria em gestão de propriedades rurais</li>
-            </ul>
-        </section>
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Entre em contato conosco para saber mais sobre nossos serviços.</p>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome"><br><br>
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem"></textarea><br><br>
-                <input type="submit" value="Enviar">
-            </form>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Agrinho. Todos os direitos reservados.</p>
-    </footer>
+  <header>
+    <nav>
+      <div class="menu-hamburguer">
+        <input type="checkbox" id="menu-hamburguer-checkbox">
+        <label for="menu-hamburguer-checkbox">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#atividades">Atividades</a></li>
+          <li><a href="#comunidade">Comunidade</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <h1>Agrinho: Conscientização Ambiental</h1>
+      <p>Um site para promover a conscientização ambiental e a educação sustentável entre os jovens.</p>
+      <button>Explorar</button>
+    </section>
+    <section id="recursos">
+      <h2>Recursos</h2>
+      <div class="carrosel">
+        <div class="carrosel-item">
+          <img src="https://raw.githubusercontent.com/xps5055/agrinho/master/assets/recursos/1.png" alt="Imagem 1">
+          <p>Descrição da imagem 1</p>
+        </div>
+        <div class="carrosel-item">
+          <img src="https://raw.githubusercontent.com/xps5055/agrinho/master/assets/recursos/2.png" alt="Imagem 2">
+          <p>Descrição da imagem 2</p>
+        </div>
+        <div class="carrosel-item">
+          <img src="https://raw.githubusercontent.com/xps5055/agrinho/master/assets/recursos/3.png" alt="Imagem 3">
+          <p>Descrição da imagem 3</p>
+        </div>
+      </div>
+    </section>
+    <section id="atividades">
+      <h2>Atividades</h2>
+      <div class="quizzes">
+        <div class="quizzes-item">
+          <h3>Quiz 1</h3>
+          <p>Descrição do quiz 1</p>
+          <button>Iniciar</button>
+        </div>
+        <div class="quizzes-item">
+          <h3>Quiz 2</h3>
+          <p>Descrição do quiz 2</p>
+          <button>Iniciar</button>
+        </div>
+        <div class="quizzes-item">
+          <h3>Quiz 3</h3>
+          <p>Descrição do quiz 3</p>
+          <button>Iniciar</button>
+        </div>
+      </div>
+    </section>
+    <section id="comunidade">
+      <h2>Comunidade</h2>
+      <p>Um espaço para compartilhar ideias e experiências sobre temas ambientais.</p>
+      <button>Participar</button>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Xps5055</p>
+    <p>Licença MIT</p>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
