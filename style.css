@@ -1,114 +1,114 @@
 /* styles.css */
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-  
-  header {
-    background-color: rgba(0, 128, 0, 0.8);
-    padding: 1em;
-    text-align: center;
-  }
-  
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .menu-hamburguer {
-    display: none;
-  }
-  
-  .menu-hamburguer-checkbox {
-    display: none;
-  }
-  
-  .menu-hamburguer-label {
-    display: block;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  
-  .menu-hamburguer-label span {
-    display: block;
-    width: 20px;
-    height: 2px;
-    background-color: rgba(0, 0, 0, 0.8);
-    margin: 5px auto;
-  }
-  
-  .menu-hamburguer-label span:nth-child(2) {
-    width: 15px;
-  }
-  
-  .menu-hamburguer.active {
-    display: block;
-  }
-  
-  .carrosel {
-    position: relative;
-    width: 100%;
-    height: 300px;
-    overflow: hidden;
-  }
-  
-  .carrosel-item {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    transition: opacity 0.5s;
-  }
-  
-  .carrosel-item.active {
-    opacity: 1;
-  }
-  
-  .carrosel-item:not(.active) {
-    opacity: 0;
-  }
-  
-  .quizzes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .quizzes-item {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .quizzes-item.active {
-    background-color: rgba(0, 128, 0, 0.8);
-    color: rgba(255, 255, 255, 0.8);
-  }
-  
-  .quizzes-item:not(.active) {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: rgba(0, 0, 0, 0.8);
-  }
-  
-  footer {
-    background-color: rgba(0, 128, 0, 0.8);
-    padding: 1em;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.8);
-  }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+header {
+  background-color: rgba(0, 128, 0, 0.8);
+  padding: 1em;
+  text-align: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-hamburguer {
+  display: none;
+}
+
+.menu-hamburguer-checkbox {
+  display: none;
+}
+
+.menu-hamburguer-label {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menu-hamburguer-label span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 5px auto;
+}
+
+.menu-hamburguer-label span:nth-child(2) {
+  width: 15px;
+}
+
+.menu-hamburguer.active {
+  display: block;
+}
+
+.carrosel {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.carrosel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s;
+}
+
+.carrosel-item.active {
+  opacity: 1;
+}
+
+.carrosel-item:not(.active) {
+  opacity: 0;
+}
+
+.quizzes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.quizzes-item {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.quizzes-item.active {
+  background-color: rgba(0, 128, 0, 0.8);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.quizzes-item:not(.active) {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.8);
+}
+
+footer {
+  background-color: rgba(0, 128, 0, 0.8);
+  padding: 1em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
